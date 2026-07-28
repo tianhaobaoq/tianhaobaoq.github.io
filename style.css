@@ -1,39 +1,156 @@
-#overlay{
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    z-index:999;
-    text-align:center;
-    color:white;
-    text-shadow:
-        0 0 8px rgba(0,0,0,.9),
-        0 0 30px rgba(255,255,255,.15);
+@font-face {
+
+    font-family:'Lovely';
+
+    src:url('LOVELY.otf') format('opentype');
+
+    font-weight:normal;
+
+    font-style:normal;
+
 }
+
+
+
+/* TEXTO PRINCIPAL */
+
+#overlay{
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:999;
+
+    width:90%;
+
+    text-align:center;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px rgba(0,0,0,.9),
+        0 0 35px rgba(255,255,255,.25);
+
+    animation:fadeIn 2s ease;
+
+}
+
+
+
+/* TITULO */
 
 #overlay h1{
-    font-family:'Great Vibes', cursive;
-    font-size:5rem;
-    font-weight:400;
+
+    font-family:'Lovely', cursive;
+
+    font-size:7rem;
+
+    font-weight:normal;
+
     letter-spacing:2px;
+
+    line-height:1.2;
+
+    margin:0;
+
 }
 
-#overlay p{
-    margin-top:18px;
-    font-family:'Cormorant Garamond', serif;
-    font-size:2rem;
-    font-weight:300;
-    letter-spacing:1px;
+
+
+/* LINEA DECORATIVA */
+
+.line{
+
+    width:160px;
+
+    height:2px;
+
+    margin:25px auto;
+
+    background:rgba(255,255,255,.8);
+
+    box-shadow:
+
+        0 0 15px white;
+
 }
+
+
+
+/* SUBTEXTO */
+
+#overlay p{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:2.2rem;
+
+    font-weight:300;
+
+    letter-spacing:2px;
+
+    margin-top:20px;
+
+}
+
+
+
+/* ANIMACION DE ENTRADA */
+
+@keyframes fadeIn{
+
+
+from{
+
+    opacity:0;
+
+    transform:translate(-50%,-40%);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translate(-50%,-50%);
+
+}
+
+
+}
+
+
+
+/* MOVIL */
 
 @media(max-width:700px){
 
+
 #overlay h1{
-    font-size:3.2rem;
+
+    font-size:4rem;
+
 }
 
+
 #overlay p{
-    font-size:1.3rem;
+
+    font-size:1.4rem;
+
 }
+
+
+.line{
+
+    width:100px;
+
+}
+
 
 }
