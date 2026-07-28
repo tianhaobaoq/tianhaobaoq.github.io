@@ -1,73 +1,58 @@
-const photos=[];
+const memories = [
 
-const TOTAL=20;
+    "Viajes ✈️",
 
+    "Roblox 🎮",
 
-for(let i=1;i<=TOTAL;i++){
+    "Brawl Stars ⭐",
 
-    photos.push(`fotos/${i}.jpg`);
+    "Stardew Valley 🌱",
 
-}
+    "Clases de ruso 🇷🇺",
 
+    "Estudiar 📚",
 
-let index=0;
+    "Juntos ❤️",
 
+    "*** ✨"
 
-const img=document.getElementById("photo");
-
-
-
-function startAlbum(){
-
-
-    document.getElementById("popup").style.display="none";
+];
 
 
-    changePhoto();
+let memoryIndex = 0;
 
 
-    setInterval(changePhoto,5000);
-
-
-}
+const memoryText = document.getElementById("changing-text");
 
 
 
-function changePhoto(){
+setInterval(()=>{
 
 
-    img.classList.remove("show");
-
+    memoryText.classList.remove("change");
 
 
     setTimeout(()=>{
 
 
-        img.src=photos[index];
+        memoryIndex++;
 
 
+        if(memoryIndex >= memories.length){
 
-        img.onload=()=>{
-
-            img.classList.add("show");
-
-        };
-
-
-
-        index++;
-
-
-
-        if(index>=photos.length){
-
-            index=0;
+            memoryIndex = 0;
 
         }
 
 
+        memoryText.textContent = memories[memoryIndex];
 
-    },700);
+
+        memoryText.classList.add("change");
 
 
-}
+    },500);
+
+
+
+},3000);
