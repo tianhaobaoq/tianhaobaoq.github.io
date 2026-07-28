@@ -11,13 +11,9 @@ body{
 
     overflow:hidden;
 
-    font-family:Arial;
-
 }
 
 
-
-/* POPUP */
 
 #popup{
 
@@ -31,8 +27,7 @@ body{
 
     align-items:center;
 
-    background:
-    rgba(0,0,0,.45);
+    background:rgba(0,0,0,.45);
 
     backdrop-filter:blur(10px);
 
@@ -56,21 +51,9 @@ body{
 
     border-radius:30px;
 
+    background:rgba(255,255,255,.12);
 
-    background:
-    rgba(255,255,255,.12);
-
-
-    border:
-    1px solid rgba(255,255,255,.25);
-
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.5);
-
-
-    animation:
-    popup .8s ease;
+    border:1px solid rgba(255,255,255,.25);
 
 }
 
@@ -82,8 +65,6 @@ body{
 
     font-size:5rem;
 
-    font-weight:400;
-
 }
 
 
@@ -94,7 +75,7 @@ body{
 
     font-size:2rem;
 
-    margin:25px 0;
+    margin:25px;
 
 }
 
@@ -102,179 +83,16 @@ body{
 
 button{
 
-    border:none;
-
     padding:15px 35px;
 
     border-radius:50px;
 
-
-    background:white;
-
-    color:black;
-
-    font-size:1.1rem;
+    border:none;
 
     cursor:pointer;
 
-    transition:.3s;
-
 }
 
-
-button:hover{
-
-    transform:scale(1.05);
-
-}
-
-
-
-@keyframes popup{
-
-from{
-
-    opacity:0;
-
-    transform:scale(.7);
-
-}
-
-to{
-
-    opacity:1;
-
-    transform:scale(1);
-
-}
-
-}
-
-
-
-
-
-/* TEXTO CAMBIANTE */
-
-
-#container{
-
-    position:fixed;
-
-    top:70px;
-
-    width:100%;
-
-    text-align:center;
-
-    z-index:20;
-
-    color:white;
-
-    font-family:'Cormorant Garamond';
-
-    font-size:45px;
-
-    font-weight:bold;
-
-    text-shadow:
-    0 0 20px black;
-
-}
-
-
-
-#container span{
-
-    display:inline-block;
-
-}
-
-
-
-/* caja donde cambia la palabra */
-
-#flip{
-
-    height:65px;
-
-    overflow:hidden;
-
-    display:inline-block;
-
-    vertical-align:middle;
-
-    margin-left:10px;
-
-}
-
-
-
-#changing-text{
-
-    display:inline-block;
-
-    padding:5px 25px;
-
-    height:60px;
-
-    line-height:60px;
-
-    border-radius:15px;
-
-    color:white;
-
-    font-family:'Great Vibes';
-
-    font-size:55px;
-
-    background:rgba(78,199,243,.8);
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:
-
-    0 0 20px rgba(0,0,0,.5);
-
-}
-
-
-
-.change{
-
-    animation:slideText .6s ease;
-
-}
-
-
-
-@keyframes slideText{
-
-
-from{
-
-    opacity:0;
-
-    transform:translateY(50px);
-
-}
-
-
-to{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-}
-
-
-
-
-
-/* FOTOS */
 
 
 #slideshow{
@@ -297,43 +115,12 @@ to{
 
     opacity:0;
 
-
-    transition:
-
-    opacity 1.5s ease;
-
 }
 
 
 
 .show{
 
-    opacity:1;
-
-    animation:
-
-    move 8s linear infinite alternate;
-
-}
-
-
-
-@keyframes move{
-
-
-from{
-
-    transform:scale(1)
-    translateX(-20px);
-
-}
-
-
-to{
-
-    transform:scale(1.1)
-    translateX(20px);
-
-}
+    opacity:1 !important;
 
 }
