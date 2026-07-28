@@ -1,26 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:black;
+
+    overflow:hidden;
+
+}
+
+
+
+/* POPUP */
+
+#popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(15px);
+
+    z-index:100;
+
+}
+
+
+
+.card{
+
+    width:90%;
+
+    max-width:500px;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    color:white;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.12);
+
+    border:
+    1px solid rgba(255,255,255,.25);
+
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.6);
+
+
+    animation:
+    popup .8s ease;
+
+}
+
+
+
+.card h1{
+
+    font-family:'Great Vibes';
+
+    font-size:5rem;
+
+    font-weight:400;
+
+}
+
+
+
+.card p{
+
+    font-family:'Cormorant Garamond';
+
+    font-size:2rem;
+
+    margin:25px 0;
+
+}
+
+
+
+button{
+
+    padding:15px 40px;
+
+    border-radius:50px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.7);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+/* TEXTO FLIP */
+
+
 #container{
 
     position:fixed;
 
-    top:80px;
-
     width:100%;
+
+    top:50px;
 
     text-align:center;
 
     z-index:20;
 
+
     color:white;
 
     font-family:'Roboto';
 
-    font-size:36px;
+    text-transform:uppercase;
+
+    font-size:35px;
 
     font-weight:bold;
 
-    text-transform:uppercase;
 
-    text-shadow:0 0 20px black;
+    text-shadow:
+    0 0 20px black;
 
 }
 
@@ -34,57 +184,197 @@
 
     display:inline-block;
 
-    margin-left:10px;
+    vertical-align:middle;
 
 }
 
 
 
-#changing-text{
+#flip > div > div{
 
-    padding:5px 20px;
-
-    height:50px;
-
-    line-height:50px;
 
     color:white;
 
-    border-radius:12px;
+    padding:5px 25px;
 
-    background:#4ec7f3;
+    height:55px;
 
-    transition:.5s;
+    margin-bottom:55px;
+
+    display:inline-block;
+
+
+    border-radius:15px;
+
+    backdrop-filter:blur(10px);
 
 }
 
 
 
-.change{
+#flip > div{
 
-    animation:slideText .5s ease;
+    animation:
+    show 20s infinite;
 
 }
 
 
 
-@keyframes slideText{
+#flip div div:nth-child(1){
+
+background:rgba(78,199,243,.75);
+
+}
+
+
+#flip div div:nth-child(2){
+
+background:rgba(66,197,138,.75);
+
+}
+
+
+#flip div div:nth-child(3){
+
+background:rgba(220,20,60,.75);
+
+}
+
+
+
+
+@keyframes show{
+
+
+0%{
+
+margin-top:-385px;
+
+}
+
+
+15%{
+
+margin-top:-275px;
+
+}
+
+
+30%{
+
+margin-top:-275px;
+
+}
+
+
+45%{
+
+margin-top:-165px;
+
+}
+
+
+60%{
+
+margin-top:-165px;
+
+}
+
+
+75%{
+
+margin-top:-55px;
+
+}
+
+
+99%{
+
+margin-top:-55px;
+
+}
+
+
+100%{
+
+margin-top:-385px;
+
+}
+
+
+}
+
+
+
+/* FOTOS */
+
+
+#slideshow{
+
+width:100vw;
+
+height:100vh;
+
+}
+
+
+
+#photo{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+opacity:0;
+
+}
+
+
+
+.show{
+
+opacity:1;
+
+
+animation:
+
+move 10s linear infinite alternate;
+
+
+transition:
+
+opacity 1.5s ease;
+
+}
+
+
+
+
+@keyframes move{
 
 
 from{
 
-    opacity:0;
+transform:
 
-    transform:translateY(40px);
+scale(1)
+
+translateX(-30px);
 
 }
 
 
+
 to{
 
-    opacity:1;
+transform:
 
-    transform:translateY(0);
+scale(1.12)
+
+translateX(30px);
 
 }
 
