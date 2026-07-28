@@ -95,7 +95,7 @@ body{
 
     font-family:'Lovely', cursive;
 
-    font-size:6rem;
+    font-size:8rem;
 
     font-weight:normal;
 
@@ -187,24 +187,17 @@ body{
 
 button{
 
-
-    padding:15px 35px;
-
+    padding:20px 50px;
 
     border:none;
 
-
     border-radius:50px;
-
 
     cursor:pointer;
 
-
-    font-size:1rem;
-
+    font-size:1.3rem;
 
     transition:.3s;
-
 
 }
 
@@ -281,16 +274,23 @@ button:hover{
 @media(max-width:700px){
 
 
+.card{
+
+    padding:50px 30px;
+
+}
+
+
 .card h1{
 
-    font-size:4rem;
+    font-size:4.5rem;
 
 }
 
 
 .card p{
 
-    font-size:1.4rem;
+    font-size:1.5rem;
 
 }
 
