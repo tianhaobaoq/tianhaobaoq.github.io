@@ -1,6 +1,6 @@
 const photos=[];
 
-const TOTAL=20; // cambia según tus fotos
+const TOTAL=20;
 
 
 for(let i=1;i<=TOTAL;i++){
@@ -11,6 +11,7 @@ for(let i=1;i<=TOTAL;i++){
 
 
 let index=0;
+
 
 const img=document.getElementById("photo");
 
@@ -38,10 +39,12 @@ function changePhoto(){
     img.classList.remove("show");
 
 
+
     setTimeout(()=>{
 
 
         img.src=photos[index];
+
 
 
         img.onload=()=>{
@@ -51,7 +54,9 @@ function changePhoto(){
         };
 
 
+
         index++;
+
 
 
         if(index>=photos.length){
@@ -59,6 +64,7 @@ function changePhoto(){
             index=0;
 
         }
+
 
 
     },700);
