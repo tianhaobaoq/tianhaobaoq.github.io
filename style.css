@@ -2,17 +2,44 @@
 
     font-family:'Lovely';
 
-    src:url('LOVELY.otf') format('opentype');
+    src:url('./LOVELY.otf') format('opentype');
 
     font-weight:normal;
 
     font-style:normal;
 
+    font-display:swap;
+
 }
 
 
 
-/* TEXTO PRINCIPAL */
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    background:black;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+/* TEXTO INICIAL */
+
 
 #overlay{
 
@@ -32,9 +59,13 @@
 
     color:white;
 
+
     text-shadow:
-        0 0 10px rgba(0,0,0,.9),
-        0 0 35px rgba(255,255,255,.25);
+
+    0 0 10px rgba(0,0,0,.9),
+
+    0 0 35px rgba(255,255,255,.25);
+
 
     animation:fadeIn 2s ease;
 
@@ -42,115 +73,208 @@
 
 
 
-/* TITULO */
+
 
 #overlay h1{
 
+
     font-family:'Lovely', cursive;
+
 
     font-size:7rem;
 
+
     font-weight:normal;
 
+
     letter-spacing:2px;
+
 
     line-height:1.2;
 
-    margin:0;
 
 }
 
 
 
-/* LINEA DECORATIVA */
+
+
+
 
 .line{
 
+
     width:160px;
+
 
     height:2px;
 
+
     margin:25px auto;
 
-    background:rgba(255,255,255,.8);
 
-    box-shadow:
+    background:white;
 
-        0 0 15px white;
+
+    opacity:.8;
+
+
+    box-shadow:0 0 15px white;
+
 
 }
 
 
 
-/* SUBTEXTO */
+
+
 
 #overlay p{
 
+
     font-family:'Cormorant Garamond', serif;
+
 
     font-size:2.2rem;
 
+
     font-weight:300;
+
 
     letter-spacing:2px;
 
-    margin-top:20px;
 
 }
 
 
 
-/* ANIMACION DE ENTRADA */
+
+
+
 
 @keyframes fadeIn{
 
 
 from{
 
+
     opacity:0;
 
+
     transform:translate(-50%,-40%);
+
 
 }
 
 
 to{
 
+
     opacity:1;
+
 
     transform:translate(-50%,-50%);
 
-}
-
 
 }
 
 
+}
 
-/* MOVIL */
+
+
+
+
+
+
+/* FOTOS */
+
+
+#slideshow{
+
+
+    width:100vw;
+
+
+    height:100vh;
+
+
+}
+
+
+
+
+
+#photo{
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    opacity:0;
+
+
+    transition:opacity 1.5s ease;
+
+
+}
+
+
+
+
+
+.show{
+
+
+    opacity:1;
+
+
+}
+
+
+
+
+
+
 
 @media(max-width:700px){
 
 
+
 #overlay h1{
+
 
     font-size:4rem;
 
+
 }
+
 
 
 #overlay p{
 
+
     font-size:1.4rem;
 
+
 }
+
 
 
 .line{
 
+
     width:100px;
 
+
 }
+
 
 
 }
