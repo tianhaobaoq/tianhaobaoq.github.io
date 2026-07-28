@@ -4,123 +4,70 @@
     box-sizing:border-box;
 }
 
-
 body{
-
-    background:black;
-
+    background:#000;
     overflow:hidden;
-
+    font-family:Arial,Helvetica,sans-serif;
 }
 
+#slideshow{
+    position:fixed;
+    inset:0;
+}
 
+#photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 
-#popup{
+    opacity:0;
 
+    transition:
+        opacity 1.5s ease,
+        transform 8s linear;
+
+    transform:scale(1);
+}
+
+.show{
+    opacity:1;
+    transform:scale(1.08);
+}
+
+#overlay{
     position:fixed;
 
-    inset:0;
+    top:40px;
+    left:50%;
 
-    display:flex;
+    transform:translateX(-50%);
 
-    justify-content:center;
-
-    align-items:center;
-
-    background:rgba(0,0,0,.45);
-
-    backdrop-filter:blur(10px);
-
-    z-index:100;
-
-}
-
-
-
-.card{
-
-    width:90%;
-
-    max-width:500px;
-
-    padding:50px 35px;
+    z-index:999;
 
     text-align:center;
 
     color:white;
 
-    border-radius:30px;
-
-    background:rgba(255,255,255,.12);
-
-    border:1px solid rgba(255,255,255,.25);
-
+    text-shadow:0 0 12px black;
 }
 
-
-
-.card h1{
-
-    font-family:'Great Vibes';
-
-    font-size:5rem;
-
+#overlay h1{
+    font-size:3rem;
 }
 
+#overlay p{
+    margin-top:10px;
+    font-size:1.4rem;
+}
 
+@media(max-width:700px){
 
-.card p{
-
-    font-family:'Cormorant Garamond';
-
+#overlay h1{
     font-size:2rem;
-
-    margin:25px;
-
 }
 
-
-
-button{
-
-    padding:15px 35px;
-
-    border-radius:50px;
-
-    border:none;
-
-    cursor:pointer;
-
+#overlay p{
+    font-size:1rem;
 }
-
-
-
-#slideshow{
-
-    width:100vw;
-
-    height:100vh;
-
-}
-
-
-
-#photo{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    opacity:0;
-
-}
-
-
-
-.show{
-
-    opacity:1 !important;
 
 }
