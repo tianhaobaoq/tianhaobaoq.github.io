@@ -136,16 +136,18 @@ body{
 @keyframes pulse{
 
     0%,100%{
+
         transform:scale(1);
+
     }
 
     50%{
+
         transform:scale(1.15);
+
     }
 
 }
-
-
 
 
 
@@ -157,7 +159,7 @@ body{
 
     inset:0;
 
-    z-index:1;
+    z-index:5;
 
     display:flex;
 
@@ -193,6 +195,8 @@ body{
 
     transition:opacity 1.5s ease;
 
+    z-index:6;
+
 }
 
 
@@ -202,8 +206,6 @@ body{
     opacity:1 !important;
 
 }
-
-
 
 
 
@@ -241,11 +243,7 @@ body{
 
     text-shadow:0 0 20px black;
 
-}
-
-
-
-#footer .line{
+}#footer .line{
 
     width:130px;
 
@@ -281,9 +279,13 @@ body{
 
 
 
+/* ANIMACION PALABRAS */
+
 #flip{
 
-    height:32px;
+    --word-height:32px;
+
+    height:var(--word-height);
 
     overflow:hidden;
 
@@ -301,9 +303,9 @@ body{
 
 .words div{
 
-    height:32px;
+    height:var(--word-height);
 
-    line-height:32px;
+    line-height:var(--word-height);
 
     font-weight:bold;
 
@@ -314,31 +316,47 @@ body{
 @keyframes flip{
 
     0%,15%{
+
         transform:translateY(0);
+
     }
+
 
     20%,35%{
-        transform:translateY(-22px);
+
+        transform:translateY(calc(var(--word-height) * -1));
+
     }
+
 
     40%,55%{
-        transform:translateY(-44px);
+
+        transform:translateY(calc(var(--word-height) * -2));
+
     }
+
 
     60%,75%{
-        transform:translateY(-66px);
+
+        transform:translateY(calc(var(--word-height) * -3));
+
     }
+
 
     80%,90%{
-        transform:translateY(-88px);
+
+        transform:translateY(calc(var(--word-height) * -4));
+
     }
 
+
     95%,100%{
-        transform:translateY(-110px);
+
+        transform:translateY(calc(var(--word-height) * -5));
+
     }
 
 }
-
 
 
 
@@ -398,22 +416,59 @@ body{
 
 
 
+/* TABLET */
+
+@media(max-width:1024px){
+
+    #photo{
+
+        width:75vw;
+
+        height:50vh;
+
+        top:54%;
+
+        transform:translate(-50%,-45%);
+
+    }
+
+
+    #flip{
+
+        --word-height:28px;
+
+    }
+
+
+
+
+
+
+
+/* MOVIL */
 
 @media(max-width:700px){
+
 
     #overlay{
 
         width:90%;
+
         padding:15px;
+
         top:20px;
 
     }
+
+
 
     #overlay h1{
 
         font-size:3.5rem;
 
     }
+
+
 
     .heart{
 
@@ -422,51 +477,58 @@ body{
     }
 
 
+
     #footer{
 
         width:90%;
+
         bottom:20px;
+
         padding:10px 15px;
 
     }
 
 
+
     #footer .line{
 
         width:100px;
+
         margin-bottom:10px;
 
     }
 
 
+
     .mensaje{
 
         font-size:0.85rem;
+
         gap:6px;
 
     }
 
 
+
     #flip{
 
-        height:22px;
+        --word-height:22px;
 
     }
 
-
-    .words div{
-
-        height:22px;
-        line-height:22px;
-
-    }
 
 
     #photo{
 
         width:90vw;
+
         height:45vh;
+
+        top:52%;
+
+        transform:translate(-50%,-35%);
 
     }
 
+}
 }
