@@ -1,0 +1,472 @@
+@font-face{
+
+    font-family:'Lovely';
+
+    src:url('LOVELY.otf') format('opentype');
+
+    font-weight:normal;
+
+    font-style:normal;
+
+}
+
+
+@font-face{
+
+    font-family:'AnonymousPunk';
+
+    src:url('WISHFULWAVES.ttf') format('opentype');
+
+    font-weight:normal;
+
+    font-style:normal;
+
+}
+
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    background-image:url('Fondo.jpg');
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    overflow:hidden;
+
+    font-family:Arial,sans-serif;
+
+    touch-action:manipulation;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+/* TITULO ARRIBA */
+
+#overlay{
+
+    position:fixed;
+
+    top:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:70%;
+
+    max-width:650px;
+
+    padding:20px 30px;
+
+    text-align:center;
+
+    color:white;
+
+    z-index:10;
+
+    background:rgba(0,0,0,.35);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    text-shadow:0 0 20px black;
+
+}
+
+
+
+#overlay h1{
+
+    font-family:'Lovely',cursive;
+
+    font-size:5.5rem;
+
+    font-weight:normal;
+
+    line-height:.95;
+
+}
+
+
+
+#overlay h1 span{
+
+    display:block;
+
+}
+
+
+
+.heart{
+
+    display:block;
+
+    font-size:3.5rem;
+
+    margin-top:10px;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+}
+
+
+
+
+
+/* FOTOS */
+
+#slideshow{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+#photo{
+
+    width:65vw;
+
+    height:55vh;
+
+    object-fit:contain;
+
+    position:absolute;
+
+    top:58%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:25px;
+
+    box-shadow:0 0 50px rgba(255,255,255,.25);
+
+    opacity:0;
+
+    transition:opacity 1.5s ease;
+
+}
+
+
+
+.show{
+
+    opacity:1 !important;
+
+}
+
+
+
+
+
+/* TEXTO ABAJO */
+
+#footer{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:70%;
+
+    max-width:650px;
+
+    padding:15px 25px;
+
+    text-align:center;
+
+    color:white;
+
+    z-index:10;
+
+    background:rgba(0,0,0,.35);
+
+    -webkit-backdrop-filter:blur(5px);
+
+    backdrop-filter:blur(5px);
+
+    border-radius:25px;
+
+    text-shadow:0 0 20px black;
+
+}
+
+
+
+#footer .line{
+
+    width:130px;
+
+    height:2px;
+
+    margin:0 auto 15px;
+
+    background:white;
+
+    box-shadow:0 0 15px white;
+
+}
+
+
+
+.mensaje{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    font-family:'AnonymousPunk',sans-serif;
+
+    font-size:1.5rem;
+
+}
+
+
+
+#flip{
+
+    height:32px;
+
+    overflow:hidden;
+
+}
+
+
+
+.words{
+
+    animation:flip 14s infinite;
+
+}
+
+
+
+.words div{
+
+    height:32px;
+
+    line-height:32px;
+
+    font-weight:bold;
+
+}
+
+
+
+@keyframes flip{
+
+    0%,15%{
+        transform:translateY(0);
+    }
+
+    20%,35%{
+        transform:translateY(-22px);
+    }
+
+    40%,55%{
+        transform:translateY(-44px);
+    }
+
+    60%,75%{
+        transform:translateY(-66px);
+    }
+
+    80%,90%{
+        transform:translateY(-88px);
+    }
+
+    95%,100%{
+        transform:translateY(-110px);
+    }
+
+}
+
+
+
+
+
+
+/* BOTON PAUSA */
+
+#pauseBtn{
+
+    position:fixed;
+
+    top:15px;
+
+    right:15px;
+
+    z-index:200;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:rgba(0,0,0,.55);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    -webkit-backdrop-filter:blur(10px);
+
+    backdrop-filter:blur(10px);
+
+    touch-action:manipulation;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+}
+
+
+
+#pauseBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+
+
+@media(max-width:700px){
+
+    #overlay{
+
+        width:90%;
+        padding:15px;
+        top:20px;
+
+    }
+
+    #overlay h1{
+
+        font-size:3.5rem;
+
+    }
+
+    .heart{
+
+        font-size:2.2rem;
+
+    }
+
+
+    #footer{
+
+        width:90%;
+        bottom:20px;
+        padding:10px 15px;
+
+    }
+
+
+    #footer .line{
+
+        width:100px;
+        margin-bottom:10px;
+
+    }
+
+
+    .mensaje{
+
+        font-size:0.85rem;
+        gap:6px;
+
+    }
+
+
+    #flip{
+
+        height:22px;
+
+    }
+
+
+    .words div{
+
+        height:22px;
+        line-height:22px;
+
+    }
+
+
+    #photo{
+
+        width:90vw;
+        height:45vh;
+
+    }
+
+}
