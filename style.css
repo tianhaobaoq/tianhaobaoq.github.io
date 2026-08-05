@@ -435,7 +435,11 @@ body{
 
     #flip{
 
-        --word-height:22px;
+         --word-height:20px;
+
+    height:var(--word-height);
+
+    overflow:hidden;
 
     }
 
