@@ -283,7 +283,7 @@ body{
 
 #flip{
 
-    --word-height:32px;
+    --word-height:20px;
 
     height:var(--word-height);
 
