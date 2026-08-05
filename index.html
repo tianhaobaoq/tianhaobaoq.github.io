@@ -14,37 +14,65 @@
 
 <body>
 
-<div id="popup">
 
-    <div class="card">
+    <!-- TITULO ARRIBA -->
+
+    <div id="overlay">
 
         <h1>
             <span>Feliz cum</span>
-            <span>pleaños</span>
+            <span>(pleaños)</span>
             <span class="heart">♡</span>
         </h1>
 
-        <div class="line"></div>
+    </div>
 
-        <p>
-            Por muchos más recuerdos juntos ❤️
-        </p>
 
-        <button onclick="startAlbum()">
-            Ver recuerdos ✨
-        </button>
 
+    <!-- FOTOS -->
+
+    <div id="slideshow">
+
+        <img id="photo" src="" alt="Recuerdo">
+
+    </div>
+
+
+<div id="footer">
+
+    <div class="line"></div>
+
+    <div class="mensaje">
+        <span>Por mucho mas</span>
+
+        <div id="flip">
+            <div class="words">
+                <div>brawl</div>
+                <div>roblox</div>
+                <div>ruso</div>
+                <div>chino</div>
+                <div>viaje</div>
+                <div>tiempo</div>
+                
+            </div>
+        </div>
+
+        <span>juntos</span>
     </div>
 
 </div>
 
-<div id="slideshow">
 
-    <img id="photo" src="" alt="Recuerdo">
 
-</div>
+    <!-- BOTON PAUSA -->
 
-<script src="script.js"></script>
+    <button id="pauseBtn" aria-label="Pausar o reanudar presentación">
+        ⏸
+    </button>
+
+
+    <script src="script.js" defer></script>
+
 
 </body>
 
