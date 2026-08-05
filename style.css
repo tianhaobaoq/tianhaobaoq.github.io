@@ -1,4 +1,4 @@
-@font-face {
+@font-face{
 
     font-family:'Lovely';
 
@@ -6,18 +6,29 @@
 
     font-weight:normal;
 
+    font-style:normal;
+
 }
 
 
+@font-face{
+
+    font-family:'AnonymousPunk';
+
+    src:url('WISHFULWAVES.ttf') format('opentype');
+
+    font-weight:normal;
+
+    font-style:normal;
+
+}
 
 
 
 *{
 
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
 
 }
@@ -26,201 +37,113 @@
 
 body{
 
-    background:black;
+    background-image:url('Fondo.jpg');
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
 
     overflow:hidden;
 
+    font-family:Arial,sans-serif;
+
+    touch-action:manipulation;
+
+    -webkit-tap-highlight-color:transparent;
+
 }
 
 
 
+/* TITULO ARRIBA */
 
-
-/* POPUP */
-
-#popup{
+#overlay{
 
     position:fixed;
 
-    top:0;
+    top:25px;
 
-    left:0;
+    left:50%;
 
-    width:100vw;
+    transform:translateX(-50%);
 
-    height:100vh;
+    width:70%;
 
+    max-width:650px;
 
-    display:flex;
+    padding:20px 30px;
 
-    justify-content:center;
+    text-align:center;
 
-    align-items:center;
+    color:white;
 
+    z-index:10;
 
-    background:rgba(0,0,0,.55);
+    background:rgba(0,0,0,.35);
 
-    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(10px);
 
+    backdrop-filter:blur(10px);
 
-    z-index:100;
+    border-radius:25px;
+
+    text-shadow:0 0 20px black;
 
 }
 
 
 
+#overlay h1{
 
+    font-family:'Lovely',cursive;
 
-.card h1{
-
-    font-family:'Lovely', cursive;
-
-    font-size:8rem;
+    font-size:5.5rem;
 
     font-weight:normal;
 
-    line-height:0.9;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:0;
-
-    margin-bottom:15px;
+    line-height:.95;
 
 }
 
-.card h1 span{
+
+
+#overlay h1 span{
 
     display:block;
 
 }
 
+
+
 .heart{
 
-    font-size:4.5rem;
+    display:block;
 
-    margin-top:15px;
+    font-size:3.5rem;
 
-    animation:pulse 1.8s ease-in-out infinite;
+    margin-top:10px;
+
+    animation:pulse 2s infinite;
 
 }
-
-
 
 
 
 @keyframes pulse{
 
+    0%,100%{
+        transform:scale(1);
+    }
 
-0%,100%{
-
-    transform:scale(1);
-
-}
-
-
-50%{
-
-    transform:scale(1.15);
+    50%{
+        transform:scale(1.15);
+    }
 
 }
-
-
-}
-
-
-
-
-
-.line{
-
-
-    width:200px;
-
-
-    height:3px;
-
-
-    margin:35px auto;
-
-
-    background:white;
-
-
-    box-shadow:
-
-    0 0 20px white;
-
-
-}
-
-
-
-
-
-.card p{
-
-
-    margin:30px 0;
-
-
-    font-family:Georgia,serif;
-
-
-    font-size:2.5rem;
-
-
-    letter-spacing:1px;
-
-
-}
-
-
-
-
-
-button{
-
-
-    padding:22px 60px;
-
-
-    border:none;
-
-
-    border-radius:60px;
-
-
-    cursor:pointer;
-
-
-    font-size:1.5rem;
-
-
-    transition:.3s;
-
-
-}
-
-
-
-
-
-button:hover{
-
-
-    transform:scale(1.08);
-
-
-}
-
-
 
 
 
@@ -228,54 +151,248 @@ button:hover{
 
 /* FOTOS */
 
-
 #slideshow{
 
+    position:fixed;
 
-    width:100vw;
+    inset:0;
 
+    z-index:1;
 
-    height:100vh;
+    display:flex;
 
+    justify-content:center;
+
+    align-items:center;
 
 }
-
-
 
 
 
 #photo{
 
+    width:65vw;
 
-    width:100%;
+    height:55vh;
 
+    object-fit:contain;
 
-    height:100%;
+    position:absolute;
 
+    top:58%;
 
-    object-fit:cover;
+    left:50%;
 
+    transform:translate(-50%,-50%);
+
+    border-radius:25px;
+
+    box-shadow:0 0 50px rgba(255,255,255,.25);
 
     opacity:0;
 
-
-    transition:opacity 1.5s;
-
+    transition:opacity 1.5s ease;
 
 }
-
-
 
 
 
 .show{
 
-
-    opacity:1;
-
+    opacity:1 !important;
 
 }
 
+
+
+
+
+/* TEXTO ABAJO */
+
+#footer{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:70%;
+
+    max-width:650px;
+
+    padding:15px 25px;
+
+    text-align:center;
+
+    color:white;
+
+    z-index:10;
+
+    background:rgba(0,0,0,.35);
+
+    -webkit-backdrop-filter:blur(5px);
+
+    backdrop-filter:blur(5px);
+
+    border-radius:25px;
+
+    text-shadow:0 0 20px black;
+
+}
+
+
+
+#footer .line{
+
+    width:130px;
+
+    height:2px;
+
+    margin:0 auto 15px;
+
+    background:white;
+
+    box-shadow:0 0 15px white;
+
+}
+
+
+
+.mensaje{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    font-family:'AnonymousPunk',sans-serif;
+
+    font-size:1.5rem;
+
+}
+
+
+
+#flip{
+
+    height:32px;
+
+    overflow:hidden;
+
+}
+
+
+
+.words{
+
+    animation:flip 14s infinite;
+
+}
+
+
+
+.words div{
+
+    height:32px;
+
+    line-height:32px;
+
+    font-weight:bold;
+
+}
+
+
+
+@keyframes flip{
+
+    0%,15%{
+        transform:translateY(0);
+    }
+
+    20%,35%{
+        transform:translateY(-22px);
+    }
+
+    40%,55%{
+        transform:translateY(-44px);
+    }
+
+    60%,75%{
+        transform:translateY(-66px);
+    }
+
+    80%,90%{
+        transform:translateY(-88px);
+    }
+
+    95%,100%{
+        transform:translateY(-110px);
+    }
+
+}
+
+
+
+
+
+
+/* BOTON PAUSA */
+
+#pauseBtn{
+
+    position:fixed;
+
+    top:15px;
+
+    right:15px;
+
+    z-index:200;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:rgba(0,0,0,.55);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    -webkit-backdrop-filter:blur(10px);
+
+    backdrop-filter:blur(10px);
+
+    touch-action:manipulation;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+}
+
+
+
+#pauseBtn:hover{
+
+    transform:scale(1.1);
+
+}
 
 
 
@@ -284,44 +401,72 @@ button:hover{
 
 @media(max-width:700px){
 
+    #overlay{
+
+        width:90%;
+        padding:15px;
+        top:20px;
+
+    }
+
+    #overlay h1{
+
+        font-size:3.5rem;
+
+    }
+
+    .heart{
+
+        font-size:2.2rem;
+
+    }
 
 
-.card{
+    #footer{
 
-    width:90vw;
+        width:90%;
+        bottom:20px;
+        padding:10px 15px;
 
-    min-height:auto;
-
-    padding:50px 25px;
-
-}
+    }
 
 
+    #footer .line{
 
-.card h1{
+        width:100px;
+        margin-bottom:10px;
 
-    font-size:4rem;
-
-    white-space:normal;
-
-}
+    }
 
 
+    .mensaje{
 
-.card p{
+        font-size:0.85rem;
+        gap:6px;
 
-    font-size:1.5rem;
-
-}
+    }
 
 
-button{
+    #flip{
 
-    padding:15px 35px;
+        height:22px;
 
-    font-size:1.1rem;
+    }
 
-}
 
+    .words div{
+
+        height:22px;
+        line-height:22px;
+
+    }
+
+
+    #photo{
+
+        width:90vw;
+        height:45vh;
+
+    }
 
 }
